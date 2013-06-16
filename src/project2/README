@@ -1,0 +1,31 @@
+Group Members: Jose Rivera
+Email Addresses: transfix@cs.utexas.edu
+
+L system:
+F-move forward FORWARD*SCALE meters.
+0,1,2,3,4-sub-branch
+[,]-push/pop respectively
+L-draw terminating leaf
+R-rotate YROTATE degrees around the branch
+T-tilt (rotate TILT degrees about the z axis of the branch)
+Turtle starts at (modelx,modely,modelz), is facing upward (y), 
+and it's plane is parallel with the xy axis
+Axiom: 0
+0 -> FF[RL1][RR2][RRR3]F[RL3][RR1][RRR2]RFLR0
+1 -> FL[T[RF]2]R[TRFL]RTFL4
+2 -> FL[TRF3]RFLRTFL2
+3 -> FL[TFL2RFL]R[T[RFLF3]]RTFL2
+4 -> FL[TRFL4]RFLRTFL4
+
+Compilation: just type 'make'
+
+Extra features: animation - smooth growing and randomized wind motion, 
+true 3D L-system and tree.
+To enable growth, press 'h'. 
+
+Group Questions:
+1) When switching to an orthographic projection, the tree appears flat, 
+and branches that come toward the screen when using the perspective 
+projection just lie flat against all the other branches.
+2) This is because when using an orthographic projection, all sense of
+depth is lost since perspective warping does not happen.

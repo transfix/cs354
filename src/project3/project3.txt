@@ -1,0 +1,25 @@
+Project 3 Individual Written Questions 
+
+Name: Jose Rivera
+Email Address: transfix@cs.utexas.edu
+
+1. Writing to a file would be similiar to the calls for drawing the object; instead of
+calling glNormal and glVertex, a line could be written to the file.  To include color
+and normal information, every vertex in the text file could be preceeded with a color
+vector and a normal vector. 
+
+
+2. Since all the control points effectively show a boundary for the curve, and since
+0.8 is close to the end of the curve, the point should be between the last 2 points
+close to the last control point.  Thus a good estimation for C(0.8) would be (10.5,0.5) 
+
+
+3. (a)The limit curve would be a square with rounded edges.  (b)The limit curve would be a circle
+because there are no points on the square edges that cause future points to be close to the edge.
+
+
+4. To draw a donut, one can simply draw a circle that is disconnected from the axis of rotation.
+For a vase, the start point of the curve would be off of the axis of rotation, while the end point
+would be on it, creating an open top.
+
+

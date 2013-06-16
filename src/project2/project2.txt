@@ -1,0 +1,61 @@
+Project 2 Individual Written Questions
+
+Name: Jose Rivera
+Email Address: transfix@cs.utexas.edu
+
+1.) 
+An orthographic projection maps points to a viewport using parallel projection lines.
+A perspective projection projects into a single point with the screen x units away
+from that point.  The projection lines of a perspective projection all intersect at
+that point.  glFrustum multiplies the current matrix with a perspective matrix
+while glOrtho multiplies the current matrix with an orthographic matrix.  glFrustum
+and gluPerspective do essentially the same thing, however gluPerspective creates the
+projection matrix with slightly more intuitive parameters.
+Calling gluPerspective() with glFrustum() parameters:
+	gluPerspective(2*atan(right/near)*(180/M_PI),right/top,near,far);
+
+2.)
+The same L-system can be used for the leaf, as the 'branches' in the L-system
+could represent the veins on the leaf.  However drawing the leaf would be
+quite different, depending on the style of leaf.  For instance, to draw a maple
+leaf, we would need a planar shape around the branches, connecting all of the
+branches to leaf tissue.  The perimeter of this planar shape could be calculated
+by using the endpoints of the branches after the final iteration of the L-system,
+or another L-system could be used to outline the leaf perimeter.
+
+3.)
+
+a.
+
+A * B * P = [[-3.0622]
+             [8.69615]
+             [1      ]]
+
+The point P is first translated by x=2 and y=3, then it is rotated about the Z axis
+by 60 degrees.
+
+b.
+
+B * A * P = [[0.5359]
+             [8.4641]
+             [1     ]]
+
+The point P is first rotated about the Z axis by 60 degrees, then translated by
+x=2 and y=3. 
+
+c.
+
+Because the point has do be drawn before translating to the new position.
+
+4.)
+Assuming the axis of symmetry is the y axis:
+
+radian_increment = 2*pi/(number of triangles)
+For each pair of verticies in the cross section between y==top and y==bottom
+       For radians from 0 to 2*pi, radians+=radian_increment
+	   draw a quad using the top most vertex, the vertex underneath, and
+	   two corresponding verticies radian_increment from these in the circle.
+
+Then, using the top vertex as the center, draw a triangle fan using the circle of verticies
+underneath the top vertex.  Finally, using the bottom vertex as the center, draw a triangle
+fan using the circle of verticies just above the bottom vertex.

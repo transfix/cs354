@@ -1,0 +1,112 @@
+=========
+PROJECT 1
+=========
+
+/*
+ * README
+ * ------
+ * Put the results of the Performance Test here.  Also, include the names
+ * of your team members and any special instructions for compiling, etc.,
+ * if you did something besides the standard Makefile.
+ *
+ * Group Members: Jose Rivera
+ */
+
+Performance Tests
+1. Solid cube - 0.29 sec
+   Wire cube  - 0.23 sec
+2. Quad cube  - 0.29 sec
+3. Quad array cube - 0.29 sec
+4. Solid cone - 0.38 sec
+   Wire cone  - 0.35 sec
+5. Triangle cone - 0.30 sec
+6. Triangle array cone - 0.30 sec
+7. Calculated cone - 0.29 sec
+
+The wire cube ran the quickest, though almost all of them ran at about the
+same speed.  The only exception would be the glut cone, but I would guess
+this was because it had more slices and stacks than the other cones, and
+therefore more to render.
+
+Note:  For the freeform scene, I decided that a static collection of
+models was quite boring and decided to try to use animation.  For the
+animation timing, I have used an interval timer set by setitimer(), and
+I update the scene after receiving a SIGALRM signal.  The scene is
+updated 60 times a second.
+
+=========
+PROJECT 2
+=========
+
+Group Members: Jose Rivera
+Email Addresses: transfix@cs.utexas.edu
+
+L system:
+F-move forward FORWARD*SCALE meters.
+0,1,2,3,4-sub-branch
+[,]-push/pop respectively
+L-draw terminating leaf
+R-rotate YROTATE degrees around the branch
+T-tilt (rotate TILT degrees about the z axis of the branch)
+Turtle starts at (modelx,modely,modelz), is facing upward (y), 
+and it's plane is parallel with the xy axis
+Axiom: 0
+0 -> FF[RL1][RR2][RRR3]F[RL3][RR1][RRR2]RFLR0
+1 -> FL[T[RF]2]R[TRFL]RTFL4
+2 -> FL[TRF3]RFLRTFL2
+3 -> FL[TFL2RFL]R[T[RFLF3]]RTFL2
+4 -> FL[TRFL4]RFLRTFL4
+
+Compilation: just type 'make'
+
+Extra features: animation - smooth growing and randomized wind motion, 
+true 3D L-system and tree.
+To enable growth, press 'h'. 
+
+Group Questions:
+1) When switching to an orthographic projection, the tree appears flat, 
+and branches that come toward the screen when using the perspective 
+projection just lie flat against all the other branches.
+2) This is because when using an orthographic projection, all sense of
+depth is lost since perspective warping does not happen.
+
+=========
+PROJECT 3
+=========
+
+/*
+ * README
+ * ------
+ * Include the names of your group members and any special instructions
+ * for compiling, etc., if you did something besides the standard
+ * Makefile.  Also, document any additional features in this file.
+ *
+ * Group Members: Jose Rivera
+ *
+ */
+
+To compile, just type 'make'.  Pressing 'n' when the program is running
+draws the normals for the object.  This was used to ensure that the normal
+calculations were correct.  The program does not have an upper bound for the
+number of control points allowed since the model data is kept in a linked 
+list.
+
+=========
+PROJECT 4
+=========
+
+/*
+ * README
+ * ------
+ * Include the names of your group members and any special instructions
+ * for compiling, etc., if you did something besides the standard
+ * Makefile.  Also, document any additional features in this file.
+ *
+ * Group Members: Jose Rivera
+ *
+ */
+
+To compile, just type make.
+
+Extra features:  Texture mapping, anti-aliasing, support for any quadratic
+surface (infinite or bounded).

@@ -1,0 +1,41 @@
+Project 4 Individual Written Questions
+
+Name: Jose Rivera
+Email Address: transfix@cs.utexas.edu
+
+1. a) You can just pass different values for the number of slices when
+      calling glutWireCone().
+   b) You could change the number of triangles used for the cone by using 
+      less (or more) divisions around the center of the base for the bottom 2 
+      vertices of each triangle.
+2. a) First, you divide the bottom and top circular planes of the cylinder
+      into an arbitrary number of divisions (>3), the more divisions, the
+      smoother the cylinder.  Every 2 adjacent divisions of the cylinder
+      are 2 verticies of a triangle.  The third vertex is on the opposite
+      side of the cylinder.  Each triangle would be right triangles, and
+      would form quadrilaterals with triangles rotated 180 degrees and 
+      positioned right above.  These quadrilaterals will be situated around
+      the cylinder, forming a cylindrical approximation using a triangle strip.
+   b) Each pair of triangles would be situated in such a way that they form a
+      quadrilateral (as above).  Then an arbitrary number of triangle strips
+      around the surface of the sphere can be stacked on top of each other,
+      thus eventually spanning the surface of a spherical approximation.
+3.  It would be rendered very much like the way we rendered the cone
+    using GL's vertex and index arrays in Display Mode 6, except instead
+    of using the GL_TRIANGLES rendering mode, we use GL_LINE_LOOP as follows:
+ 
+  glEnableClientState(GL_VERTEX_ARRAY);
+
+  glVertexPointer(3, GL_FLOAT, 0, object_vertices);
+  glDrawElements(GL_LINE_LOOP, num_indices,
+		 GL_UNSIGNED_INT, object_indices);
+  
+  glDisableClientState(GL_VERTEX_ARRAY);
+
+4. The only way this could be done is if you use glBegin(GL_TRIANGLES), and
+   specify every triangle individually, using the same color for each vertex
+   of the current triangle.  The limitation of triangle fans is that the
+   color of shared vertices will blend into each triangle the vertex is used.
+
+
+

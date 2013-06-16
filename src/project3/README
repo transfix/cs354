@@ -1,0 +1,16 @@
+/*
+ * README
+ * ------
+ * Include the names of your group members and any special instructions
+ * for compiling, etc., if you did something besides the standard
+ * Makefile.  Also, document any additional features in this file.
+ *
+ * Group Members: Jose Rivera
+ *
+ */
+
+To compile, just type 'make'.  Pressing 'n' when the program is running
+draws the normals for the object.  This was used to ensure that the normal
+calculations were correct.  The program does not have an upper bound for the
+number of control points allowed since the model data is kept in a linked 
+list.

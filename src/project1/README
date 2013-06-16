@@ -1,0 +1,31 @@
+/*
+ * README
+ * ------
+ * Put the results of the Performance Test here.  Also, include the names
+ * of your team members and any special instructions for compiling, etc.,
+ * if you did something besides the standard Makefile.
+ *
+ * Group Members: Jose Rivera
+ */
+
+Performance Tests
+1. Solid cube - 0.29 sec
+   Wire cube  - 0.23 sec
+2. Quad cube  - 0.29 sec
+3. Quad array cube - 0.29 sec
+4. Solid cone - 0.38 sec
+   Wire cone  - 0.35 sec
+5. Triangle cone - 0.30 sec
+6. Triangle array cone - 0.30 sec
+7. Calculated cone - 0.29 sec
+
+The wire cube ran the quickest, though almost all of them ran at about the
+same speed.  The only exception would be the glut cone, but I would guess
+this was because it had more slices and stacks than the other cones, and
+therefore more to render.
+
+Note:  For the freeform scene, I decided that a static collection of
+models was quite boring and decided to try to use animation.  For the
+animation timing, I have used an interval timer set by setitimer(), and
+I update the scene after receiving a SIGALRM signal.  The scene is
+updated 60 times a second.
