@@ -69,23 +69,6 @@ IF(APPLE)
     "${CMAKE_INSTALL_PREFIX}${CMAKE_BUNDLE_NAME}.app/Contents")
 ENDIF(APPLE)
 
-# dependencies setup
-set(SYSTEM_NAME ${CMAKE_SYSTEM_NAME})
-set(DEPS_DIR deps/${SYSTEM_NAME})
-if(MSVC)
-    if(CMAKE_CL_64)
-        set(SYSTEM_NAME "win64")
-    else(CMAKE_CL_64)
-        SET(SYSTEM_NAME "win32")
-    endif(CMAKE_CL_64)
-    set(DEPS_DIR deps/${SYSTEM_NAME}-${MSVC_VERSION})
-endif(MSVC)
-
-message("DEPS_DIR: " ${DEPS_DIR})
-set(GLUT_ROOT_PATH  ${CMAKE_SOURCE_DIR}/${DEPS_DIR}/freeglut)
-set(GLEW_ROOT_PATH  ${CMAKE_SOURCE_DIR}/${DEPS_DIR}/glew-1.9.0)
-set(BOOST_ROOT      ${CMAKE_SOURCE_DIR}/${DEPS_DIR}/boost_1_53_0)
-
 # include macros for setting up some library dependencies
 include( SetupQt )
 include( SetupBoost )
